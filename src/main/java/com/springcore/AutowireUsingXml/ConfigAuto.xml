@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean class="com.springcore.AutowireUsingXml.Address" name="address">
+		<property name="street"  value="Surat"/>
+		<property name="city" value="Gitanagar" />
+	
+	</bean>
+	
+	
+	<!-- second bean -->
+	<bean class="com.springcore.AutowireUsingXml.Address" name="address1">
+		<property name="street"  value="Vesu"/>
+		<property name="city" value="Althan" />
+	
+	</bean>
+	
+	<!-- by using name -->
+	<!-- <bean class="com.springcore.AutowireUsingXml.Emp" name="emp" autowire="byName"/> -->
+	<!-- by using type -->
+	<!-- <bean class="com.springcore.AutowireUsingXml.Emp" name="emp" autowire="byType"/> -->
+	<!-- by using constructor -->
+	<bean class="com.springcore.AutowireUsingXml.Emp" name="emp" autowire="constructor"/>
+	
+	
+	
+</beans>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- standalone list -->
+
+	<util:list list-class="java.util.LinkedList" id="myBF">
+		<value>Aman</value>
+		<value>RAm</value>
+		<value>Syam</value>
+		<value>Sira</value>
+
+	</util:list>
+
+	<!-- standalone map -->
+	<util:map map-class="java.util.TreeMap" id="fees">
+		<entry key="Spring framework" value="8000" />
+		<entry key="Diango framework" value="5000" />
+		<entry key="Hibernate framework" value="2000" />
+	</util:map>
+
+	<!-- standalone properties -->
+
+	<util:properties id="dbConfig">
+		<prop key="driver">com.oracle.jdbc.Driver</prop>
+		<prop key="username">bisoyi</prop>
+		<prop key="password">root</prop>
+	<prop key="url">localhost:4409/database</prop>
+
+	</util:properties>
+	<bean class="com.springcore.StandaloneCollection.Person"
+		name="person1">
+
+		<!-- <property name="frnds"> <ref bean="myBF" /> </property> -->
+
+		<!-- above is also correct. we can both. -->
+
+		<property name="frnds" ref="myBF"></property>
+		<property name="feestruct" ref="fees" />
+		<property name="prop" ref="dbConfig"/>
+	</bean>
+
+	<!-- Another bean -->
+
+	<!-- <bean class="com.springcore.StandaloneCollection.Person" name="person2"> 
+		<property name="frnds" ref="myBF"></property> </bean> -->
+
+</beans>
